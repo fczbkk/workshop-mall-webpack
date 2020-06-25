@@ -2,5 +2,13 @@
   "name": "@fczbkk/workshop-mall-webpack",
   "version": "1.0.0",
   "dependencies": {
+    "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
+  },
+  "scripts": {
+    "build": "webpack -c ./webpack.config.js"
   }
 }
