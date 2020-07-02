@@ -1,0 +1,10 @@
+$baseColor: red;
+
+body {
+  border: 2em solid $baseColor;
+
+  img {
+    border: 1em solid green;
+  }
+}
+

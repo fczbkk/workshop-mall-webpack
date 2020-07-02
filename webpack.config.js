@@ -1,4 +1,14 @@
 const path = require('path')
+const autoprefixer = require('autoprefixer')
+
+const styleLoaders = [
+  'style-loader',
+  'css-loader',
+  {
+    loader: 'postcss-loader',
+    options: { plugins: [autoprefixer] }
+  }
+]
 
 module.exports = {
   mode: 'production',
@@ -15,5 +25,27 @@ module.exports = {
     splitChunks: {
       chunks: 'all'
     }
+  },
+  module: {
+    rules: [
+      {
+        test: /\.svg$/,
+        loaders: [
+          'file-loader',
+          'svgo-loader'
+        ]
+      },
+      {
+        test: /\.css$/,
+        loaders: styleLoaders
+      },
+      {
+        test: /\.scss$/,
+        loaders: [
+          ...styleLoaders,
+          'sass-loader'
+        ]
+      }
+    ]
   }
 }

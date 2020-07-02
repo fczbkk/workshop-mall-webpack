@@ -1,15 +1,8 @@
-import get from 'lodash/get'
-import { doSomething as doSomethingElse } from './utilities.js'
+import shapes from './shapes.svg'
+import style from './style.css'
+import style2 from './style2.scss'
 
-doSomethingElse()
-
-const myData = {
-  aaa: {
-    bbb: {
-      ccc: 'ddd'
-    }
-  }
-}
-
-console.log(get(myData, 'aaa.xxx.ccc'))
-console.log(get(myData, 'aaa.bbb.ccc'))
+console.log('shapes', shapes)
+const imageElement = document.createElement('img')
+imageElement.setAttribute('src', 'build/' + shapes)
+document.body.appendChild(imageElement)
